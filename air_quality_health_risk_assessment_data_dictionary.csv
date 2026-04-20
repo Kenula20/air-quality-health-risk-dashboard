@@ -1,0 +1,25 @@
+original_column_name,standardized_column_name,final_column_name
+Country Or Territory,country_or_territory,country
+NUTS Code,nuts_code,nuts_code
+NUTS Name,nuts_name,nuts_name
+Degree Of Urbanisation,degree_of_urbanisation,degree_of_urbanisation
+Year,year,year
+Air Pollutant,air_pollutant,pollutant
+Data Aggregation Id,data_aggregation_id,data_aggregation_id
+Scenario,scenario,scenario
+Category,category,category
+Outcome,outcome,outcome
+Health Indicator,health_indicator,health_indicator
+Sex,sex,sex
+Description Of Age Group,description_of_age_group,age_group
+Population,population,population
+Affected Population,affected_population,affected_population
+Area [km2],area_km2,area_km2
+Air Pollution Average [ug/m3],air_pollution_average_ug_m3,air_pollution_avg_ug_m3
+Air Pollution Population Weighted Average [ug/m3],air_pollution_population_weighted_average_ug_m3,air_pollution_pop_weighted_avg_ug_m3
+Value,value,value
+Value - lower CI,value_lower_ci,value_lower_ci
+Value - upper CI,value_upper_ci,value_upper_ci
+Value for 100k Of Affected Population,value_for_100k_of_affected_population,value_per_100k
+Value for 100k Of Affected Population - lower CI,value_for_100k_of_affected_population_lower_ci,value_per_100k_lower_ci
+Value for 100k Of Affected Population - upper CI,value_for_100k_of_affected_population_upper_ci,value_per_100k_upper_ci
