@@ -2,17 +2,13 @@ import pandas as pd
 import streamlit as st
 from pathlib import Path
 
-# =========================================
-# Page setup
-# =========================================
+#page set up 
 st.set_page_config(
     page_title="Air Quality Health Risk Dashboard",
     layout="wide"
 )
 
-# =========================================
-# Load data
-# =========================================
+# Loading data 
 project_folder = Path(__file__).resolve().parent
 data_file = project_folder / "air_quality_health_risk_assessment_cleaned.csv"
 
@@ -42,9 +38,7 @@ def load_data(file_path):
 
 df = load_data(data_file)
 
-# =========================================
-# Required columns check
-# =========================================
+#Column Check
 required_cols = [
     "country",
     "nuts_name",
@@ -62,9 +56,7 @@ if missing_required:
     st.error(f"Missing required columns: {missing_required}")
     st.stop()
 
-# =========================================
-# Helper settings
-# =========================================
+
 metric_labels = {
     "value_per_100k": "Value per 100k",
     "value": "Value",
@@ -86,9 +78,7 @@ def remove_aggregates(dataframe):
 def section_visible(section_name, selected_section):
     return selected_section == "Show All Sections" or selected_section == section_name
 
-# =========================================
-# Sidebar = table of contents only
-# =========================================
+#Table of contents 
 st.sidebar.title("Table of Contents")
 selected_section = st.sidebar.radio(
     "Navigate",
@@ -102,18 +92,14 @@ selected_section = st.sidebar.radio(
     ]
 )
 
-# =========================================
-# Title
-# =========================================
+#Title
 st.title("Air Quality Health Risk Dashboard")
 st.markdown(
     "This dashboard explores air quality health risk patterns across countries and NUTS regions. "
     "Each visual uses its own purpose-specific filter controls."
 )
 
-# =========================================
-# 1. Overview
-# =========================================
+#Overview
 if section_visible("1. Overview", selected_section):
     st.header("1. Overview")
 
@@ -160,9 +146,7 @@ if section_visible("1. Overview", selected_section):
 
     st.divider()
 
-# =========================================
-# 2. Top Regions
-# =========================================
+#Top regions
 if section_visible("2. Top Regions", selected_section):
     st.header("2. Top Regions")
 
@@ -222,9 +206,7 @@ if section_visible("2. Top Regions", selected_section):
 
     st.divider()
 
-# =========================================
-# 3. Country Comparison
-# =========================================
+#Country Comparison
 if section_visible("3. Country Comparison", selected_section):
     st.header("3. Country Comparison")
 
@@ -279,9 +261,7 @@ if section_visible("3. Country Comparison", selected_section):
 
     st.divider()
 
-# =========================================
-# 4. Pollutant Comparison
-# =========================================
+#Pollutant Comparison
 if section_visible("4. Pollutant Comparison", selected_section):
     st.header("4. Pollutant Comparison")
 
@@ -340,9 +320,7 @@ if section_visible("4. Pollutant Comparison", selected_section):
 
     st.divider()
 
-# =========================================
-# 5. Data Table
-# =========================================
+#Data Table
 if section_visible("5. Data Table", selected_section):
     st.header("5. Data Table")
 
